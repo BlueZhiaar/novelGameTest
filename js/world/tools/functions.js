@@ -23,9 +23,96 @@ export function returnPerson(per_id){
 
 }
 
-export function makeH1String(h1_str){
-    document.getElementById("novel_string").textContent=h1_str;
+/**
+ * 次のシーンに移るため画面をクリアにする
+ * 
+ */
+export const messageArea = document.getElementById("messageArea");
+
+export function refreshScene(){
+   
+
+    //画面をクリア
+    messageArea.textContent = '';
+
+  
+
 }
+
+
+// ファイルの最上部付近で1度だけ宣言
+let typeTimerId = null;
+
+// 画面を消去する関数
+export function clearScene() {
+  if (typeTimerId !== null) {
+    clearTimeout(typeTimerId);
+    typeTimerId = null;
+  }
+  messageArea.textContent = '';
+}
+
+export function clearButton(){
+    let selectButtonArea =document.getElementById("selectButtonArea");
+    selectButtonArea.innerHTML ='';
+}
+
+// シーンをセットする関数
+export function setScene(txt_body) {
+  const targetElement = messageArea;
+  const speed = 70;
+
+
+
+  let charIndex = 0;
+
+  function typeWriter() {
+    if (charIndex < txt_body.length) {
+      targetElement.textContent += txt_body.charAt(charIndex);
+      charIndex++;
+      typeTimerId = setTimeout(typeWriter, speed);
+    } else {
+      typeTimerId = null;
+    }
+  }
+
+  typeWriter();
+}
+
+
+
+/**
+ *ボタンを作る
+ * 
+ */
+
+
+
+ // ボタンを生成する関数（第5引数に「クリック時に動かす処理」を1つだけ渡す）
+// functions.js
+export function makeButton(label, className, id, parentId, onClick) {
+  const btn = document.createElement('button');
+  btn.textContent = label;
+  btn.className = className;
+  btn.id = id;
+
+  if (typeof onClick === 'function') {
+    btn.addEventListener('click', onClick);
+  }
+
+  document.getElementById(parentId).appendChild(btn);
+  return btn;
+}
+
+export const gameState = {
+    currentPerson:null,
+};
+
+ 
+
+
+
+
 
 
 

@@ -14,7 +14,7 @@
       user-select: none;
       -webkit-user-select: none;
       font-family: system-ui, -apple-system, sans-serif;
-      background-color:white
+      background-color:black
     }
 
     /* 3. アプリ全体のラッパー（画面全体にフィットさせる） */
@@ -40,3 +40,36 @@
       padding: 16px;
       
     }
+
+    #gameTitle{
+       margin: 15%;
+        color: white;
+        text-align: center;
+    }
+
+    #screenLine{
+       color:white
+
+    }
+
+    #messageArea{
+        color: white;
+  white-space: pre-wrap; /* \n を改行として画面に反映させる設定 */
+  text-align: left;    /* 各行の頭を左端に揃える */
+  
+
+  /* fit-content をやめ、固定幅（または画面に応じた幅）にする */
+  width: 600px;        /* 文字列の最大長に合わせた横幅 */
+  max-width: 90%;      /* スマホ等で画面からはみ出さないための保険 */
+  margin: 0 auto;      /* 枠自体をあらかじめ中央に固定 */
+
+  /* テキストの最大行数分の高さをあらかじめ確保する */
+  min-height: 120px; /* 表示するテキストの行数に合わせて数値を調整 */
+    }
+
+   #selectButtonArea{
+    display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+   }

@@ -5,7 +5,8 @@ export class Scene{
 }
 
 const secenesArray=[
-    new Scene("あなたは今、運命の扉の前に居ます。サイコロを振ってください。あなたが何者になるかが分かります")
+    new Scene("あなたは今、運命の扉の前に居ます。サイコロを振ってください。あなたが何者になるかが分かります"),
+    new Scene("あなたのキャラです。さあ冒険を始めましょう。")
 ]
 
 export const SCENES_ARRAY = secenesArray;

@@ -20,7 +20,7 @@ this.skills=skills;
 
     introduceSelf() {
 
-    return `こんにちは、${this.name}です。歳は${this.age}、私は${this.skills}。${this.returnAlive(persons[2])}。`;
+    return `こんにちは、${this.name}です。歳は${this.age}、\n${this.skills}。\n${this.returnAlive(persons[2])}。`;
   }
 }
 
@@ -28,10 +28,10 @@ this.skills=skills;
 //配列に格納して使う
 
 const persons=[
-    new Person("花子","28",true,"歌って踊れます"),
-    new Person("バナナ","1521",false,"自分の皮を道端に落とせます"),
-    new Person("草","45",true,"笑ってやりすごせます"),
-    new Person("路傍の石","50021",false,"たまに転がれます"),
+    new Person("花子","28",true,"スキル:歌って踊れます"),
+    new Person("バナナ","1521",false,"スキル:自分の皮を道端に落とせます"),
+    new Person("草","45",true,"スキル:笑ってやりすごせます"),
+    new Person("路傍の石","50021",false,"スキル:たまに転がれます"),
 ];
 
 
