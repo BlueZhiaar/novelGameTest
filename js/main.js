@@ -57,18 +57,20 @@ setScene(`${text1}\n${text2}`);
   
 
   // 次の行動ボタンを生成（クリックしたらシーン2へ進む）
-  makeButton("話しかける", "button", "talkBtn", "selectButtonArea", sceneTalk);
+  makeButton("冒険に行く", "button", "talkBtn", "selectButtonArea", goBoken);
+  makeButton("嫌です。冒険に行きません。", "button", "leaveBtn", "selectButtonArea", sceneLeave);
+  
 }
 
 // --- シーン2: 話しかけた場合 ---
-function sceneTalk() {
+function goBoken() {
   clearScene();
   clearButton();
 
-  setScene(`${gameState.currentPerson.name}は笑顔で応じてくれた。`);
+  setScene(`${gameState.currentPerson.name}ははちきれんばかりの笑顔をこちらに向けてケタケタと笑い出した`);
 
   // さらに次のシーンへのボタン
-  makeButton("次へ", "button", "nextBtn", "selectButtonArea", sceneNextStory);
+  makeButton("次へ", "button", "nextBtn", "selectButtonArea", personsEnds);
 }
 
 // --- シーン3: 立ち去った場合 ---
@@ -76,7 +78,15 @@ function sceneLeave() {
   clearScene();
   clearButton();
 
-  setScene("その場を立ち去った。");
+  setScene(`私はその場を立ち去った。\n何もない。何も聞こえない。何も起こらない。\n永久にこの暗闇に私はいなければならないのだろうか。永久とはなんだろう。わからないわからないわからないわからないわからない。\nわからないわからないわからないわからないわからないわからないわからないわからないわからないわからないわからないわからないわからないわからないわからないわからないわからないわからないわからないわからないわからないわからないわからないわからないわからない\n\n----END----`);
+}
+
+function personsEnds(){
+      clearScene();
+  clearButton();
+
+  setScene(`${gameState.currentPerson.persons_end}`);
+
 }
 
 
